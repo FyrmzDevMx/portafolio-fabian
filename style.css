@@ -1,4 +1,76 @@
-/* Activation page layout */
+/* Wide layout for the standalone activation page */
+body.activation-mode .layout {
+    display: block;
+}
+
+body.activation-mode .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 2rem 5rem 0;
+}
+
+body.activation-mode .sidebar-avatar {
+    display: none;
+}
+
+body.activation-mode .main-content {
+    width: 100%;
+    padding: 1.5rem 5rem 4rem;
+    border-left: 0;
+}
+
+body.activation-mode .activation-identity {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body.activation-mode .activation-guide {
+    max-width: 1200px;
+    margin-bottom: 2rem;
+}
+
+body.activation-mode .getcid-embed {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+body.activation-mode .getcid-embed iframe {
+    width: 100%;
+    height: min(1100px, 82vh);
+    min-height: 760px;
+}
+
+body.activation-mode .site-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    body.activation-mode .sidebar {
+        padding: 5rem 1.5rem 1rem;
+    }
+
+    body.activation-mode .main-content {
+        padding: 1rem 1.5rem 3rem;
+    }
+
+    body.activation-mode .getcid-embed iframe {
+        height: 1000px;
+        min-height: 1000px;
+    }
+}
+
+@media (max-width: 600px) {
+    body.activation-mode .activation-guide {
+        padding: 1.1rem;
+    }
+
+    body.activation-mode .setup-steps {
+        grid-template-columns: 1fr;
+    }
+}/* Activation page layout */
 .activation-guide {
     max-width: 1000px;
     margin: 0 0 2.5rem;
