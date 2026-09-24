@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#fefefe">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css?v=20260924-en">
+    <link rel="stylesheet" href="/style.css?v=activation-guide-20260924">
 </head>
 <body>
     <div class="language-switch" hidden role="group" aria-label="Language" data-i18n-aria-label="language">
@@ -139,26 +139,49 @@
                 </div>
             </section>
             <section id="activacion-licencias" class="tab-panel activation-panel" aria-labelledby="activation-title">
-                                <h2 id="activation-title" class="section-title" data-i18n="activation">License activation</h2>
-                <form id="activation-form" class="activation-form">
-                    <div class="activation-field">
-                        <label for="product-key" data-i18n="productKey">Product key</label>
-                        <input id="product-key" name="productKey" type="text" placeholder="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="29" required>
-                    </div>
-                    <div class="activation-field">
-                        <label for="installation-id" data-i18n="installation">Installation ID</label>
-                        <textarea id="installation-id" name="installationId" rows="3" placeholder="Installation ID" data-i18n-placeholder="installation" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="100" required></textarea>
-                    </div>
-                    <div class="activation-actions">
-                        <button class="activation-submit" type="submit" data-i18n="submit">Get confirmation ID</button>
-                    </div>
-                    <p id="activation-status" class="activation-status" role="status" aria-live="polite"></p>
-                    <div id="activation-result" class="activation-result" hidden>
-                        <h3 data-i18n="confirmation">Confirmation ID</h3>
-                        <output id="confirmation-id"></output>
-                        <button id="copy-confirmation" type="button" class="activation-copy" data-i18n="copy">Copy code</button>
-                    </div>
-                </form>
+                <h2 id="activation-title" class="section-title" data-i18n="activation">License activation</h2>
+                <div class="activation-guide">
+                    <p class="activation-lead" data-i18n="guideIntro">Follow these steps to install Office and activate your license.</p>
+                    <ol class="activation-steps">
+                        <li>
+                            <h3 data-i18n="downloadTitle">Download Office</h3>
+                            <p data-i18n="downloadBody">Use the Microsoft download below. This installer is Office Professional Plus 2021 for Windows, in Spanish. Your license must match this edition.</p>
+                            <a class="office-download" href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/ProPlus2021Retail.img" data-i18n="downloadLink">Download Office 2021</a>
+                        </li>
+                        <li>
+                            <h3 data-i18n="mountTitle">Mount and install</h3>
+                            <p data-i18n="mountBody">Mount the downloaded image, open the new drive, run Setup.exe, and wait for installation to finish.</p>
+                        </li>
+                        <li>
+                            <h3 data-i18n="keyTitle">Enter your product key</h3>
+                            <p data-i18n="keyBody">Open Word, enter the product key you received with your purchase, and select Activate Office.</p>
+                        </li>
+                        <li>
+                            <h3 data-i18n="idTitle">Find your installation ID</h3>
+                            <p data-i18n="idBody">If the activation wizard offers phone activation, select it and keep the installation ID shown on screen.</p>
+                        </li>
+                        <li class="activation-step-getcid">
+                            <h3 data-i18n="confirmTitle">Get your confirmation ID</h3>
+                            <p data-i18n="confirmBody">Visit GetCID.us and enter your product key and installation ID to request your confirmation ID.</p>
+                            <a class="getcid-link" href="https://getcid.us/" target="_blank" rel="noopener noreferrer" data-i18n="getcidLink">Go to GetCID.us</a>
+                        </li>
+                        <li>
+                            <h3 data-i18n="finishTitle">Complete activation</h3>
+                            <p data-i18n="finishBody">Return to the Office wizard, enter the confirmation ID in its corresponding groups, and finish activation. In File &gt; Account, check that Office shows Product Activated.</p>
+                        </li>
+                    </ol>
+                    <details class="setup-help">
+                        <summary data-i18n="smartTitle">Windows blocks the installer?</summary>
+                        <div class="setup-help-body">
+                            <ol class="security-steps">
+                                <li data-i18n="sac1">Open Settings &gt; Privacy &amp; security &gt; Windows Security.</li>
+                                <li data-i18n="sac2">Select App &amp; browser control &gt; Smart App Control settings.</li>
+                                <li data-i18n="sac3">Choose Off and confirm the Windows prompt.</li>
+                            </ol>
+                            <a href="https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions" target="_blank" rel="noopener noreferrer" data-i18n="smartSource">Microsoft guidance</a>
+                        </div>
+                    </details>
+                </div>
             </section>
             <footer class="site-footer">
                 <div class="social-links">
@@ -192,7 +215,7 @@
         var tabButtons = document.querySelectorAll(".tab-btn");
         var tabPanels = document.querySelectorAll(".tab-panel");
         var tabPaths = {
-            "activacion-licencias": "/activacion"
+            "activacion-licencias": "/#activacion-licencias"
         };
 
         function activateTab(tabId) {
@@ -236,7 +259,6 @@
         window.addEventListener("hashchange", activateTabFromUrl);
         activateTabFromUrl();
     </script>
-    <script src="/i18n.js?v=59a58fae1792" defer></script>
-    <script src="/activation.js?v=caaf46a1be19" defer></script>
+    <script src="/i18n.js?v=activation-guide-20260924" defer></script>
 </body>
 </html>

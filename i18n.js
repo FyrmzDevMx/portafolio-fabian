@@ -137,8 +137,12 @@
         "es": "Obtén el ID de confirmación"
     },
     "confirmBody": {
-        "en": "Enter your product key and installation ID in the activation form on this page, then select Get confirmation ID.",
-        "es": "Introduce tu clave de producto y tu ID de instalación en el formulario de activación de esta página y selecciona Obtener ID de confirmación."
+        "en": "Visit GetCID.us and enter your product key and installation ID to request your confirmation ID.",
+        "es": "Ve a GetCID.us e introduce tu clave de producto y tu ID de instalación para solicitar tu ID de confirmación."
+    },
+    "getcidLink": {
+        "en": "Go to GetCID.us",
+        "es": "Ir a GetCID.us"
     },
     "finishTitle": {
         "en": "Complete activation",
@@ -179,7 +183,8 @@
     function setLanguage(next) {
         language = next === 'es' ? 'es' : 'en';
         panel.lang = language;
-        document.getElementById("activation-intro").lang = language;
+        const intro = document.getElementById("activation-intro");
+        if (intro) intro.lang = language;
         document.querySelectorAll('[data-i18n]').forEach(element => {
             element.textContent = t(element.dataset.i18n);
         });
