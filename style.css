@@ -590,3 +590,34 @@ body {
     background: #374151;
     font-size: 0.75rem;
 }
+
+.getcid-embed {
+    width: 100%;
+    margin: 1.5rem 0 3rem;
+}
+
+.getcid-embed iframe {
+    display: block;
+    width: 100%;
+    min-height: 760px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.getcid-fallback {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.getcid-fallback a {
+    color: var(--text);
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .getcid-embed iframe {
+        min-height: 900px;
+    }
+}
