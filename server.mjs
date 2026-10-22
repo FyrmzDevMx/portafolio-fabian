@@ -9,7 +9,8 @@ const publicOrigin = process.env.PUBLIC_ORIGIN || `http://127.0.0.1:${port}`;
 const root = fileURLToPath(new URL('.', import.meta.url));
 const allowed = new Set(['index.html', 'style.css', 'activation.js', 'i18n.js', 'profile.jpg',
     'app1.jpg', 'app2.jpg', 'app3.jpg', 'apple-touch-icon.png', 'favicon-16.png',
-    'favicon-32.png', 'favicon.ico', 'og-image.jpg']);
+    'favicon-32.png', 'favicon.ico', 'og-image.jpg', 'portfolio-assets/portfolio-react.css',
+    'portfolio-assets/portfolio-react.js']);
 const types = { html: 'text/html; charset=utf-8', css: 'text/css; charset=utf-8',
     js: 'text/javascript; charset=utf-8', jpg: 'image/jpeg', png: 'image/png', ico: 'image/x-icon' };
 const requests = new Map();
