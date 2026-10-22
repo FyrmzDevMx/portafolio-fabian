@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --test server/activation.test.mjs
+      - run: node --check server.mjs
+      - run: node --check server/activation.mjs
+      - run: node --check activation.js
+      - run: node --check i18n.js
